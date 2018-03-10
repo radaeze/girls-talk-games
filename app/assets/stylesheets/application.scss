@@ -1,0 +1,19 @@
+@import "bootstrap";
+
+.jumbotron {
+  background-image:url('http://img.hebus.com/hebus_2013/04/19/preview/1366394113_24365.jpg');
+  height:400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom:1px solid #ff6a00
+  
+}
+
+.jumbotron p {
+    color: white;
+}
+
+
+.jumbotron h1 {
+    color: white;
+}
