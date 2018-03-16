@@ -1,13 +1,19 @@
- <div class="bg-info">
+<% provide(:title, "Log in") %>
+<h1>Log in</h1>
 
-    <div class="container">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
 
-      <!-- Jumbotron Header -->
-      <header class="jumbotron">
-        <h1 class="display-3">Girls Talk Games</h1>
-        <p class="lead">Welcome!</p>
-        <a href="#" class="btn btn-danger btn-lg">My Profile</a>
-      </header>
-      
-   </div>
-    <!-- /.container -->
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
