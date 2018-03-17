@@ -15,6 +15,9 @@ gem 'sprockets-rails'
 
 gem 'jquery-rails'
 
+gem 'carrierwave', '~> 1.2.2'
+gem 'mini_magick', '~> 4.7.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -60,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
+  gem 'fog-aws', '~>1.42'
 end
 
 group :development, :test do
