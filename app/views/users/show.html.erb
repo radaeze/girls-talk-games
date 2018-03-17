@@ -1,6 +1,11 @@
-
-<%= @user.username %> 
-
-<%= @user.email %>
-
-Hello World 
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img class="img-fluid mb-d-block mx-auto" alt=""> <%= image_tag @user.picture %> 
+        <h1 class="text-uppercase mb-0"><%= @user.first_name %> <%= @user.last_name %></h1>
+        <h1 class="text-uppercase mb-0"><%= @user.username %></h1>
+        <hr class="star-light">
+        <h2 class="boom">Bio</h2>
+        <h3 class="font-weight-light mb-0"><%= @user.bio %></h2>
+      </div>
+    </header>

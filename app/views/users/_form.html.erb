@@ -24,8 +24,8 @@
   
   <%= f.label :picture, yield(:picture_text) %>
   <%= image_tag @user.picture.url if @user.picture? %>
-  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'form-control' %>
 
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'form-control' %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
 
