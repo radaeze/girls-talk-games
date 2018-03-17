@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314184656) do
+ActiveRecord::Schema.define(version: 20180317011939) do
 
   create_table "games", force: :cascade do |t|
   end
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20180314184656) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "username"
+    t.string "bio", default: "No bio"
+    t.string "picture"
   end
 
 end

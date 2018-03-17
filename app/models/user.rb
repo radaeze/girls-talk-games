@@ -12,11 +12,14 @@
 #  updated_at      :datetime        not null
 #  password_digest :string
 #  username        :string
+#  bio             :string          default("No bio")
+#  picture         :string
 #
 
 class User < ApplicationRecord
     has_many :likes
-   
+    
+    mount_uploader :picture, PictureUploader
 
     before_save :downcase_fields
     validates :username,  presence: true,
@@ -31,7 +34,7 @@ class User < ApplicationRecord
     # validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
     has_secure_password
     
-    validates :password, presence: true, length: { minimum: 6 }    
+    validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
     # Returns the hash digest of the given string.
     def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
