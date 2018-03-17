@@ -1,8 +1,14 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, class: 'form-control' %>
+  
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, class: 'form-control' %>
+  
+  <%= f.label :username %>
+  <%= f.text_field :username, class: 'form-control' %>
 
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control' %>
@@ -13,8 +19,11 @@
   <%= f.label :password_confirmation, "Confirmation" %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
   
+  <%= f.label :bio %>
+  <%= f.text_area :bio, class: 'form-control' %>
+  
   <%  f.label :picture, yield(:picture_text) %>
-  <%= image_tag picture.url if picture? %>
+  <%= image_tag @user.picture.url if @user.picture? %>
   <%= f.file_field :picture, class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
