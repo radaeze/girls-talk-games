@@ -25,6 +25,8 @@ class User < ApplicationRecord
     validates :username,  presence: true,
         length: { maximum: 50 },
         uniqueness: { case_sensitive: false }
+        
+    validate  :picture_size
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     validates :email, presence: true,
@@ -52,5 +54,12 @@ class User < ApplicationRecord
     def downcase_fields
         email.downcase!
         #username.downcase!
-    end    
+    end  
+    
+    # Validates the size of an uploaded picture.
+    def picture_size
+      if picture.size > 5.megabytes
+        errors.add(:picture, "should be less than 5MB")
+      end
+    end
 end
