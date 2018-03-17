@@ -22,10 +22,9 @@
   <%= f.label :bio %>
   <%= f.text_area :bio, class: 'form-control' %>
   
-  <%  f.label :picture, yield(:picture_text) %>
-
+  <%= f.label :picture, yield(:picture_text) %>
   <%= image_tag @user.picture.url if @user.picture? %>
-
+  <%= f.file_field :picture, class:'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
