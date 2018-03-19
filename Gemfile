@@ -70,8 +70,7 @@ group :development, :test do
 end
 
 group :production do
-  #gem 'pg'
-  gem 'fog-aws'
+  gem 'pg'
 end
 
 gem 'annotate', '~> 2.4.1.beta'
