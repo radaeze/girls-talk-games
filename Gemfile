@@ -11,6 +11,8 @@ gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 
+gem 'thredded', '~> 0.14.2'
+
 gem 'bootstrap', '~> 4.0.0'
 
 gem 'sprockets-rails'
@@ -68,7 +70,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
   gem 'fog-aws'
 end
 

@@ -13,20 +13,18 @@
 #  password_digest :string
 #  username        :string
 #  bio             :string          default("No bio")
-#  picture         :string
 #
 
 class User < ApplicationRecord
     has_many :likes
     
-    mount_uploader :picture, PictureUploader
 
     before_save :downcase_fields
     validates :username,  presence: true,
         length: { maximum: 50 },
         uniqueness: { case_sensitive: false }
         
-    validate  :picture_size
+
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     validates :email, presence: true,
@@ -48,6 +46,14 @@ class User < ApplicationRecord
     def User.new_token
       SecureRandom.urlsafe_base64
     end
+
+    def admin
+        has_role?(:admin)
+    end
+
+    def admin
+        self.id == 1
+    end
   
    private
 
@@ -56,10 +62,4 @@ class User < ApplicationRecord
         #username.downcase!
     end  
     
-    # Validates the size of an uploaded picture.
-    def picture_size
-      if picture.size > 5.megabytes
-        errors.add(:picture, "should be less than 5MB")
-      end
-    end
 end
