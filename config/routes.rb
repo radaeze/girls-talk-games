@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :sessions 
+  
+  resources :games
+  
 
   mount Thredded::Engine => '/forum'
         

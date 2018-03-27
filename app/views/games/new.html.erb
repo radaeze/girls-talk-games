@@ -1,0 +1,5 @@
+<%= form_for(@game) do |f| %>
+    <%= f.label :search %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>

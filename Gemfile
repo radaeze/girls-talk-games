@@ -13,6 +13,10 @@ gem 'rails', '~> 5.1.5'
 
 gem 'thredded', '~> 0.14.2'
 
+gem "figaro"
+
+gem 'giantbomb-api', '~> 1.6.0'
+
 gem 'bootstrap', '~> 4.0.0'
 
 gem 'sprockets-rails'
