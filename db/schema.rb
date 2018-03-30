@@ -263,6 +263,7 @@ ActiveRecord::Schema.define(version: 20180327045112) do
     t.string "password_digest"
     t.string "username"
     t.string "bio", default: "No bio"
+    t.string "picture"
     t.index ["username"], name: "username_nocase", unique: true
   end
 
