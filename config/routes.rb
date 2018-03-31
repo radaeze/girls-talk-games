@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   resources :sessions 
   
-  resources :games
+  resources :games do
+    resources :reviews
+  end
   
 
   mount Thredded::Engine => '/forum'

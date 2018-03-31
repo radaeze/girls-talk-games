@@ -9,6 +9,7 @@
 #
 
 class Game < ApplicationRecord
+     has_many :reviews
      validates :name,  presence: true,
         uniqueness: { case_sensitive: false }
   

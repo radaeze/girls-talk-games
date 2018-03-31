@@ -17,6 +17,8 @@
 
 class User < ApplicationRecord
     has_many :likes
+    has_many :reviews
+    has_many :games, :through => :reviews
     
 
     before_save :downcase_fields

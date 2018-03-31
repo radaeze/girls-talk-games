@@ -2,6 +2,8 @@ class GamesController < ApplicationController
     
     def show
         @game = Game.find(params[:id])
+        @reviews = @game.reviews
+        @review = @game.reviews.build
     end
     
     def new
@@ -9,6 +11,7 @@ class GamesController < ApplicationController
     end
     
     def create
+        Game.find_by_name(params[:game][:name])
         search = GiantBomb::Search.new().query(params[:game][:name]).resources('game').limit(1).fields('id').fetch
         game = GiantBomb::Game.detail(search[0]["id"])
         @game = Game.new
