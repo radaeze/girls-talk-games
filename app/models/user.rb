@@ -57,7 +57,7 @@ class User < ApplicationRecord
         self.id == 1
     end
   
-   private
+   #private
 
     def downcase_fields
         email.downcase!
