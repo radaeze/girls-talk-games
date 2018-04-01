@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header class = "searched">
     <div class = "container">
         <h1><%= image_tag @game.image %></h1>
@@ -5,3 +6,20 @@
         <h3><%= @game.description %></h3>
     </div>
 </header>
+=======
+<%= image_tag (@game.image) %>
+<%= @game.name %></h1>
+<%= @game.description %></h1>
+<% @reviews.each do |review| %>
+    <% if review.user_id != nil %>
+        <%= User.find(review.user_id).username %>
+        <%= review.comments %>
+    <% end %>
+<% end %>
+
+<%= form_for [@game, @review] do |f| %>
+    <%= f.label :comments %>
+    <%= f.text_field :comments, class: 'form-control' %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
+>>>>>>> 12eadacb5e341fdb4e9175ab83190b094b815626

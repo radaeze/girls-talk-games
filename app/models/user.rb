@@ -18,6 +18,8 @@
 
 class User < ApplicationRecord
     has_many :likes
+    has_many :reviews
+    has_many :games, :through => :reviews
     
 
     before_save :downcase_fields
@@ -56,7 +58,7 @@ class User < ApplicationRecord
         self.id == 1
     end
   
-   private
+   #private
 
     def downcase_fields
         email.downcase!
