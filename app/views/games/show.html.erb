@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 <header class = "searched">
     <div class = "container">
         <h1><%= image_tag @game.image %></h1>
         <h2><%= @game.name %></h2>
         <h3><%= @game.description %></h3>
-    </div>
-</header>
-=======
+
 <%= image_tag (@game.image) %>
 <%= @game.name %></h1>
 <%= @game.description %></h1>
@@ -22,4 +19,5 @@
     <%= f.text_field :comments, class: 'form-control' %>
     <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
->>>>>>> 12eadacb5e341fdb4e9175ab83190b094b815626
+    </div>
+</header>
