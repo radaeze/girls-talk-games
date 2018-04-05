@@ -4,12 +4,12 @@
         <h2><%= @game.name %></h2>
         <h3><%= @game.description %></h3>
 
-<%= image_tag (@game.image) %>
-<%= @game.name %></h1>
-<%= @game.description %></h1>
+
 <% @reviews.each do |review| %>
     <% if review.user_id != nil %>
-        <%= User.find(review.user_id).username %>
+        <% user = User.find(review.user_id) %>
+        <%= gravatar_for user %>
+        <%= user.username %> says 
         <%= review.comments %>
     <% end %>
 <% end %>
