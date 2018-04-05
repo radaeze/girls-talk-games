@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
     
     def index
-        @game = Game.all
+        @game = Game.all.sort_by{ |game| game.name.downcase }
     end
     
     def show
