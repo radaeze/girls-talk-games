@@ -74,4 +74,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'annotate', '~> 2.4.1.beta'
