@@ -1,5 +1,10 @@
-<%= form_for(@game) do |f| %>
-    <%= f.label :search %>
-    <%= f.text_field :name, class: 'form-control' %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-<% end %>
+<header class = "searching text-center">
+    <div class = "container">
+        <li><%= form_for(@game) do |f| %>
+            <h1><%= f.label(:search, "Search for a game!") %></h1>
+            <h2><%= f.text_field :name, class: 'form-control', placeholder: "What game you would like to search for? (Ex. League of Legends, Halo, Starcraft, Minesweeper, Monster Hunter, Super Mario World,...)" %></h2>
+            <h3><%= f.submit "Search", class: "btn btn-primary" %></h3>
+        <% end %>
+        </li>
+    </div>
+</header>

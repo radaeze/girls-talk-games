@@ -1,10 +1,18 @@
-<%= image_tag (@game.image) %>
-<%= @game.name %></h1>
-<%= @game.description %></h1>
+<header class = "searched">
+    <div class = "container">
+        <h1><%= image_tag @game.image %></h1>
+        <h2><%= @game.name %></h2>
+        <h3><%= @game.description %></h3>
+
+
 <% @reviews.each do |review| %>
     <% if review.user_id != nil %>
-        <%= User.find(review.user_id).username %>
+        <% user = User.find(review.user_id) %>
+        <li>
+        <%= gravatar_for user %>
+        <%= user.username %> says 
         <%= review.comments %>
+        </li>
     <% end %>
 <% end %>
 
@@ -13,3 +21,5 @@
     <%= f.text_field :comments, class: 'form-control' %>
     <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
+    </div>
+</header>
