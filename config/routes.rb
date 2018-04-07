@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#create'
   resources :users 
   get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  post   '/login',   to: 'sessions#find'
   delete '/logout',  to: 'sessions#destroy'
+  get  'auth/:provider/callback', to: 'sessions#create'
+  get  'auth/failure', to: 'sessions#failure'
   resources :sessions 
   
   resources :games do

@@ -20,11 +20,21 @@ class User < ApplicationRecord
     has_many :reviews
     has_many :games, :through => :reviews
     
+    
+    
+    def self.from_omniauth(auth)
+      require 'faker'
+      where(email: auth.info.email).first_or_initialize.tap do |user|
+       user.email = auth.info.email
+       user.password = Faker::Name.unique.name
+       user.save!
+      end   
+    end
 
     before_save :downcase_fields
-    validates :username,  presence: true,
-        length: { maximum: 50 },
-        uniqueness: { case_sensitive: false }
+     #validates :username,  presence: true,
+         #length: { maximum: 50 },
+        # uniqueness: { case_sensitive: false }
         
 
 
@@ -36,7 +46,7 @@ class User < ApplicationRecord
     # validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
     has_secure_password
     
-    validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+    validates :password, presence: true, length: { minimum: 3 }, allow_nil: true
     # Returns the hash digest of the given string.
     def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -56,6 +66,8 @@ class User < ApplicationRecord
     def admin
         self.id == 1
     end
+    
+
   
    #private
 

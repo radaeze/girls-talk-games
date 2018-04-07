@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.4.1'
-
+gem 'faker', '~> 1.8.7'
+gem 'omniauth-google-oauth2', '~> 0.2.1'
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
