@@ -9,7 +9,7 @@
     <% if review.user_id != nil %>
         <% user = User.find(review.user_id) %>
         <li>
-        <%= gravatar_for user %>
+        <%= image_tag user.picture %>
         <%= user.username %> says 
         <%= review.comments %>
         </li>
