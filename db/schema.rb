@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406213034) do
+ActiveRecord::Schema.define(version: 20180415000253) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -261,7 +261,7 @@ ActiveRecord::Schema.define(version: 20180406213034) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "uid"
+    t.integer "uid", limit: 8
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -272,6 +272,7 @@ ActiveRecord::Schema.define(version: 20180406213034) do
     t.string "username"
     t.string "bio", default: "No bio"
     t.string "provider"
+    t.string "picture"
     t.index ["username"], name: "username_nocase", unique: true
   end
 

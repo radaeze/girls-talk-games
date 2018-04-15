@@ -76,6 +76,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'fog'
 end
 
 gem 'annotate', '~> 2.4.1.beta'
