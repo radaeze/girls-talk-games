@@ -3,23 +3,27 @@
         <h1><%= image_tag @game.image %></h1>
         <h2><%= @game.name %></h2>
         <h3><%= @game.description %></h3>
-
-
-<% @reviews.each do |review| %>
-    <% if review.user_id != nil %>
-        <% user = User.find(review.user_id) %>
-        <li>
-        <%= image_tag user.picture %>
-        <%= user.username %> says 
-        <%= review.comments %>
-        </li>
-    <% end %>
-<% end %>
-
-<%= form_for [@game, @review] do |f| %>
-    <%= f.label :comments %>
-    <%= f.text_field :comments, class: 'form-control' %>
-    <%= f.submit "Save", class: "btn btn-primary" %>
-<% end %>
     </div>
 </header>
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://immense-beyond-57822-herokuapp-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
