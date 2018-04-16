@@ -28,8 +28,8 @@ class SearchesController < ApplicationController
     def index
         @search = Search.find(params[:id])
     end
-   
-   def find
-       
-   end 
+    
+    def update
+        self.create()
+    end
 end
