@@ -17,4 +17,18 @@ class GamesController < ApplicationController
     def create
         
     end
+    
+    def upvote
+        @game = Game.find(params[:id])
+        @game.upvote_by current_user
+        redirect_to @game
+    end
+    
+    def downvote
+        @game = Game.find(params[:id])
+        @game.downvote_by current_user
+        redirect_to @game
+    end
+    
+    
 end

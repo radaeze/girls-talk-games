@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   
   resources :games do
     resources :reviews
+    member do
+      put "like", to: "games#upvote"
+      put "dislike", to: "games#downvote"
+    end
   end
   
 

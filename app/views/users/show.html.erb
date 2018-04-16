@@ -10,6 +10,26 @@
         <hr class="star-light">
         <h2 class="boom">Bio</h2>
         <h3 class="font-weight-light mb-0"><%= @user.bio %></h2>
-        
       </div>
     </header>
+    <div>
+     <h4>
+          <%= " #{@user.username} likes: " %>
+          <% @user.votes.up.votables.each do |game| %>
+            <li>
+              <%= link_to game.name, game  %>
+            <li>
+          <% end %>
+      </h4>
+    </div>
+    
+    <div>
+     <h4>
+          <%= " #{@user.username} dislkes: " %>
+          <% @user.votes.down.votables.each do |game| %>
+            <li>
+              <%= link_to game.name, game  %>
+            <li>
+          <% end %>
+      </h4>
+    </div>

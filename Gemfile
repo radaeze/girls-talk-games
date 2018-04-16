@@ -23,6 +23,8 @@ gem 'giantbomb-api', '~> 1.6.0'
 
 gem 'bootstrap', '~> 4.0.0'
 
+gem 'acts_as_votable', '~> 0.11.1'
+
 gem 'sprockets-rails'
 
 gem 'jquery-rails'

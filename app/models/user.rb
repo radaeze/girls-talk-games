@@ -18,6 +18,7 @@
 #
 
 class User < ApplicationRecord
+    acts_as_voter
     has_many :likes
     has_many :reviews
     has_many :games, :through => :reviews
