@@ -3,16 +3,18 @@
 # Table name: users
 #
 #  id              :integer         not null, primary key
-#  uid             :integer
+#  uid             :integer(8)
 #  first_name      :string
 #  last_name       :string
 #  email           :string
-#  password        :string
+#  password        :string(8)
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
 #  password_digest :string
 #  username        :string
 #  bio             :string          default("No bio")
+#  provider        :string
+#  picture         :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

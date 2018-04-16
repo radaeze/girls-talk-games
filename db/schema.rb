@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415000253) do
+ActiveRecord::Schema.define(version: 20180416190622) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20180415000253) do
     t.integer "game_id"
     t.index ["game_id"], name: "index_reviews_on_game_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.text "games", default: "--- []\n"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "thredded_categories", force: :cascade do |t|

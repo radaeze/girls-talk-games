@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get  'auth/:provider/callback', to: 'sessions#create'
   get  'auth/failure', to: 'sessions#failure'
   resources :sessions 
+  resources :searches
+  post   '/searching',   to: 'searches#find'
   
   resources :games do
     resources :reviews

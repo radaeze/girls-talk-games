@@ -16,6 +16,9 @@ gem 'thredded', '~> 0.14.2'
 
 gem "figaro"
 
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 gem 'giantbomb-api', '~> 1.6.0'
 
 gem 'bootstrap', '~> 4.0.0'
