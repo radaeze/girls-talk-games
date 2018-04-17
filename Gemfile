@@ -7,7 +7,7 @@ end
 gem 'bootstrap', '~> 4.0.0'
 #gem 'bootstrap-sass', '~> 3.3.7'
 gem 'will_paginate',           '~> 3.1.6'
-gem 'bootstrap-will_paginate', '~> 1.0.0'
+
 ruby '2.4.1'
 gem 'faker', '~> 1.8.7'
 gem 'omniauth-google-oauth2', '~> 0.2.1'
@@ -19,8 +19,6 @@ gem 'thredded', '~> 0.14.2'
 
 gem "figaro"
 
-gem 'will_paginate',           '3.1.6'
-gem 'bootstrap-will_paginate', '1.0.0'
 
 gem 'giantbomb-api', '~> 1.6.0'
 
@@ -85,10 +83,7 @@ end
 
 group :production do
   gem 'pg'
-<<<<<<< HEAD
-=======
   gem 'fog-aws'
->>>>>>> 3b7d29c5c00d66c561129e484fa7bf6b670d53e2
 end
 
 gem 'annotate', '~> 2.4.1.beta'
