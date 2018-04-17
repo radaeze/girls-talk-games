@@ -14,13 +14,10 @@ Rails.application.routes.draw do
   get  'auth/:provider/callback', to: 'sessions#create'
   get  'auth/failure', to: 'sessions#failure'
   resources :sessions 
-<<<<<<< HEAD
   resources :posts,          only: [:create, :destroy]
-=======
   resources :searches
   post   '/searching',   to: 'searches#find'
   
->>>>>>> 3b7d29c5c00d66c561129e484fa7bf6b670d53e2
   resources :games do
     resources :reviews
     member do

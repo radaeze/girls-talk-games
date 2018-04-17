@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180413223413) do
-=======
 ActiveRecord::Schema.define(version: 20180416210703) do
->>>>>>> 3b7d29c5c00d66c561129e484fa7bf6b670d53e2
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -279,7 +275,7 @@ ActiveRecord::Schema.define(version: 20180416210703) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "uid", limit: 8
+    t.integer "uid"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
