@@ -3,26 +3,29 @@
 # Table name: users
 #
 #  id              :integer         not null, primary key
-#  uid             :integer
+#  uid             :integer(8)
 #  first_name      :string
 #  last_name       :string
 #  email           :string
-#  password        :string
+#  password        :string(8)
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
 #  password_digest :string
 #  username        :string
 #  bio             :string          default("No bio")
+#  provider        :string
 #  picture         :string
 #
 
 class User < ApplicationRecord
+    acts_as_voter
     has_many :likes
     has_many :reviews
     has_many :games, :through => :reviews
     has_many :posts, dependent: :destroy
     
-    
+    mount_uploader :picture, PictureUploader
+    validate  :picture_size
     
     def self.from_omniauth(auth)
       require 'faker'
@@ -77,5 +80,13 @@ class User < ApplicationRecord
         email.downcase!
         #username.downcase!
     end  
+    
+    private
+    # Validates the size of an uploaded picture.
+    def picture_size
+      if picture.size > 5.megabytes
+        errors.add(:picture, "should be less than 5MB")
+      end
+    end
     
 end

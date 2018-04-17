@@ -19,10 +19,15 @@ gem 'thredded', '~> 0.14.2'
 
 gem "figaro"
 
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 gem 'giantbomb-api', '~> 1.6.0'
 
 
 
+
+gem 'acts_as_votable', '~> 0.11.1'
 
 gem 'sprockets-rails'
 
@@ -80,6 +85,10 @@ end
 
 group :production do
   gem 'pg'
+<<<<<<< HEAD
+=======
+  gem 'fog-aws'
+>>>>>>> 3b7d29c5c00d66c561129e484fa7bf6b670d53e2
 end
 
 gem 'annotate', '~> 2.4.1.beta'

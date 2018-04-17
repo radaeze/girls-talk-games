@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180413223413) do
+=======
+ActiveRecord::Schema.define(version: 20180416210703) do
+>>>>>>> 3b7d29c5c00d66c561129e484fa7bf6b670d53e2
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -44,6 +48,12 @@ ActiveRecord::Schema.define(version: 20180413223413) do
     t.integer "game_id"
     t.index ["game_id"], name: "index_reviews_on_game_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.text "games", default: "--- []\n"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "thredded_categories", force: :cascade do |t|
@@ -269,7 +279,7 @@ ActiveRecord::Schema.define(version: 20180413223413) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "uid"
+    t.integer "uid", limit: 8
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -280,7 +290,22 @@ ActiveRecord::Schema.define(version: 20180413223413) do
     t.string "username"
     t.string "bio", default: "No bio"
     t.string "provider"
+    t.string "picture"
     t.index ["username"], name: "username_nocase", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "votable_type"
+    t.integer "votable_id"
+    t.string "voter_type"
+    t.integer "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
 end

@@ -1,10 +1,12 @@
 <% provide(:title, 'All Games') %>
 <h1>All Games</h1>
 
+<%= will_paginate %>
 <ul class="games">
-  <% @game.each do |game| %>
+  <% @games.each do |game| %>
     <li>
       <%= link_to game.name, game %>
     </li>
   <% end %>
 </ul>
+<%= will_paginate %>

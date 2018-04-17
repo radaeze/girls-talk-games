@@ -2,7 +2,15 @@
 <h1>All users</h1>
 <%= will_paginate %>
 <ul class="users">
+<<<<<<< HEAD
   <%= render @users %>
+=======
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.username, user %>
+    </li>
+  <% end %>
+>>>>>>> 3b7d29c5c00d66c561129e484fa7bf6b670d53e2
 </ul>
 
 <%= will_paginate %>
