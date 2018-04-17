@@ -20,6 +20,7 @@ class User < ApplicationRecord
     has_many :likes
     has_many :reviews
     has_many :games, :through => :reviews
+    has_many :posts, dependent: :destroy
     
     
     

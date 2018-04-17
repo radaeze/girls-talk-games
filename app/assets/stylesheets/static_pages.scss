@@ -1,3 +1,47 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron {
+  background-image:url('http://img.hebus.com/hebus_2013/04/19/preview/1366394113_24365.jpg');
+  height:400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom:1px solid #ff6a00
+}
+  
+
+.jumbotron p {
+    color: white;
+}
+
+
+
+.jumbotron h1 {
+    color: white;
+}
+
+li {
+    margin-right: .5em;
+}
+
+
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.card {
+  height: 100%;
+}
+
+
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  
+}

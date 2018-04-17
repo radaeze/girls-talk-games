@@ -3,10 +3,12 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   
   def index
-    @users = User.all
+    #@users = User.all
+    @users = User.paginate(page: params[:page])
   end  
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def new
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
+      session[:user_id] = @user.id
       flash[:success] = "Welcome to Girls Talk Games!"
       redirect_to @user
     else
@@ -42,8 +44,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password,
-                                   :password_confirmation, :username, :bio)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :username, :bio)
     end
     
         # Confirms a logged-in user.

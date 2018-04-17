@@ -4,7 +4,10 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'bootstrap', '~> 4.0.0'
+#gem 'bootstrap-sass', '~> 3.3.7'
+gem 'will_paginate',           '~> 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0.0'
 ruby '2.4.1'
 gem 'faker', '~> 1.8.7'
 gem 'omniauth-google-oauth2', '~> 0.2.1'
@@ -18,7 +21,8 @@ gem "figaro"
 
 gem 'giantbomb-api', '~> 1.6.0'
 
-gem 'bootstrap', '~> 4.0.0'
+
+
 
 gem 'sprockets-rails'
 
@@ -72,6 +76,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'annotate', '~> 2.4.1.beta'
