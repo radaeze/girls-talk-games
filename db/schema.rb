@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180410162142) do
-=======
 ActiveRecord::Schema.define(version: 20180416210703) do
->>>>>>> 3995f759ac539a80a7ab0aff68103b37c7b0e0b1
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -34,19 +30,19 @@ ActiveRecord::Schema.define(version: 20180416210703) do
     t.string "image"
   end
 
-<<<<<<< HEAD
   create_table "movieusers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
->>>>>>> 3995f759ac539a80a7ab0aff68103b37c7b0e0b1
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -286,18 +282,18 @@ ActiveRecord::Schema.define(version: 20180416210703) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "uid"
+    t.integer "uid", limit: 8
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "password", limit: 8
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "username"
     t.string "bio", default: "No bio"
-    t.string "provider"
     t.string "picture"
+    t.string "provider"
     t.index ["username"], name: "username_nocase", unique: true
   end
 
