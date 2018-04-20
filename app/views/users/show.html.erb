@@ -1,47 +1,54 @@
-
-
-    <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        
-        <% provide(:title, @user.first_name) %>
-        <h1>
-        <%= image_tag @user.picture.url if @user.picture? %>
-        </h1>
-        <h1 class="text-uppercase mb-0"><%= @user.username %></h1>
-        <hr class="star-light">
-        <h2 class="boom">Bio</h2>
-        <h3 class="font-weight-light mb-0"><%= @user.bio %></h2>
+<!DOCTYPE html>
+<html>
+  <head>
+     <%= stylesheet_link_tag 'users' %>
+     <%= javascript_include_tag 'users' %>
+      <header class="masthead bg-primary text-white text-center">
+        <div class="container">
+          
+          <% provide(:title, @user.first_name) %>
+          <h1>
+           <img class="img-fluid mb-d-block mx-auto" alt=""> <%= gravatar_for @user, size: 80 %>
+          
+         </h1>
+          <h1 class="text-uppercase mb-0"><%= @user.username %></h1>
+          <hr class="star-light">
+          <h2 class="boom">Bio</h2>
+          <h3 class="font-weight-light mb-0"><%= @user.bio %></h2>
+        </div>
+  <<<<<<<<< saved version
+        <% if @user.posts.any? %>
+        <h3>Posts (<%= @user.posts.count %>)</h3>
+        <ol class="posts">
+           <%= render @posts %>
+        </ol>
+        <%= will_paginate @posts %>
+        <% end %>
+     </div>
+     
+      <div>
+       <h4>
+            <%= " #{@user.username} likes: " %>
+            <% @user.votes.up.votables.each do |game| %>
+              <li>
+                <%= link_to game.name, game  %>
+              <li>
+            <% end %>
+        </h4>
       </div>
-    </header>
-   <div class="col-md-8">
-      <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
-      <ol class="posts">
-         <%= render @posts %>
-      </ol>
-      <%= will_paginate @posts %>
-      <% end %>
-   </div>
-   
-    <div>
-     <h4>
-          <%= " #{@user.username} likes: " %>
-          <% @user.votes.up.votables.each do |game| %>
-            <li>
-              <%= link_to game.name, game  %>
-            <li>
-          <% end %>
-      </h4>
-    </div>
-    
-    <div>
-     <h4>
-          <%= " #{@user.username} dislkes: " %>
-          <% @user.votes.down.votables.each do |game| %>
-            <li>
-              <%= link_to game.name, game  %>
-            <li>
-          <% end %>
-      </h4>
-    </div>
+      
+      <div>
+       <h4>
+            <%= " #{@user.username} dislkes: " %>
+            <% @user.votes.down.votables.each do |game| %>
+              <li>
+                <%= link_to game.name, game  %>
+              <li>
+            <% end %>
+        </h4>
+      </div>
+  =========
+      </header>
+  >>>>>>>>> local version
+  </head>
+</html>
