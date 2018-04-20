@@ -12,13 +12,17 @@
             </li>
             
             <li class="nav-item active">
-             <li><%= link_to "Search", main_app.new_game_path %></li>
+             <li><%= link_to "Search", main_app.new_search_path %></li>
             </li>
  
             <% if logged_in? %>
               
               <li class="nav-item active">
-              <li><%= link_to "Users", users_path %></li>
+              <li><%= link_to "Users", main_app.users_path %></li>
+              </li>
+              
+              <li class="nav-item active">
+              <li><%= link_to "Games", main_app.games_path %></li>
               </li>
               
               <li class="dropdown">
@@ -44,6 +48,9 @@
         <% else %>
           <li class="nav-item">
           <li><%= link_to "Login", main_app.login_path %></li>
+          </li>
+          <li class="nav-item">
+          <li><%= link_to "Login with Google", '/auth/google_oauth2' %></li>
           </li>
         <% end %>
 

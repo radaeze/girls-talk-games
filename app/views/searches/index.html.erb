@@ -1,0 +1,10 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<ul class="users">
+  <% @search.games each do |game| %>
+    <li>
+      <%= link_to game.name, game %>
+    </li>
+  <% end %>
+</ul>

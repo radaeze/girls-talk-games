@@ -1,0 +1,10 @@
+<header class = "searching text-center">
+    <div class = "container">
+        <%= form_for(@search) do |f| %>
+            <h1><%= f.label(:search, "Search for a game!") %></h1>
+            <h2><%= f.text_field :games, class: 'form-control', value: "" %></h2>
+            <h3><%= f.submit "Search", class: "btn btn-primary" %></h3>
+        <% end %>
+        
+    </div>
+</header>
