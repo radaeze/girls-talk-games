@@ -87,3 +87,18 @@ group :production do
 end
 
 gem 'annotate', '~> 2.4.1.beta'
+
+# rspec and rails 5
+ 
+# add to end of Gemfile
+gem 'themoviedb'
+ 
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails', '~>3.6.0'
+end
+ 
+group :test do
+  gem 'shoulda-matchers', '~>3.1'
+  gem 'rails-controller-testing'
+end
