@@ -1,4 +1,4 @@
 <li>
-  
+  <%= image_tag @user.picture.url if @user.picture? %>
   <%= link_to user.username%>
 </li>
