@@ -77,7 +77,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'rspec'
+gem 'rspec-its'
 group :development, :test do
+  gem 'database_cleaner'
+  
   gem 'sqlite3'
 end
 
@@ -87,6 +91,7 @@ group :production do
 end
 
 gem 'annotate', '~> 2.4.1.beta'
+
 
 # rspec and rails 5
  
@@ -99,6 +104,13 @@ group :development, :test do
 end
  
 group :test do
+  gem 'shoulda-matchers', '~>3.1'
+  gem 'rails-controller-testing'
+end
+
+
+group :test do
+  
   gem 'shoulda-matchers', '~>3.1'
   gem 'rails-controller-testing'
 end
