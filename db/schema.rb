@@ -286,14 +286,14 @@ ActiveRecord::Schema.define(version: 20180416210703) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "password"
+    t.string "password", limit: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "username"
     t.string "bio", default: "No bio"
-    t.string "picture"
     t.string "provider"
+    t.string "picture"
     t.index ["username"], name: "username_nocase", unique: true
   end
 
