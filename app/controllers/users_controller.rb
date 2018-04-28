@@ -27,11 +27,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = @current_user
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = @current_user
     if verify_recaptcha(model: @user) && @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
