@@ -15,6 +15,7 @@
 #  bio             :string          default("No bio")
 #  provider        :string
 #  picture         :string
+#  admin           :boolean
 #
 
 class User < ApplicationRecord
@@ -26,7 +27,6 @@ class User < ApplicationRecord
     
     mount_uploader :picture, PictureUploader
     validate  :picture_size
-    
     def self.from_omniauth(auth)
       require 'faker'
       where(email: auth.info.email).first_or_initialize.tap do |user|
