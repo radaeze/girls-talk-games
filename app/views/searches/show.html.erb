@@ -2,12 +2,14 @@
 <h1>Search Results</h1>
 
 <%= render 'search_form' %>
- 
+<%=" Found #{@search.games.count} results " %>
+
 <ul class="searches">
   <% @search.games.each do |game| %>
     <li>
       <%= link_to game.name, game %>
     </li>
   <% end %>
-
 </ul>
+
+
