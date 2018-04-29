@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
     end
     
     def create
-        search = GiantBomb::Search.new().query(params[:search][:games]).resources('game').limit(50).fields('id').fetch 
+        search = GiantBomb::Search.new().query(params[:search][:games]).resources('game').limit(5).fields('id').fetch 
         games_details = Array.new()
         search.each.with_index {|val, index| games_details << val["id"]}
         @search = Search.new
