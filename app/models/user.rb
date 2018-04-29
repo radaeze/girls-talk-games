@@ -62,12 +62,12 @@ class User < ApplicationRecord
       SecureRandom.urlsafe_base64
     end
 
-    def admin
-        has_role?(:admin)
-    end
+    # def admin
+    #     has_role?(:admin)
+    # end
 
     def admin
-        self.id == 1
+        self.email == "ramdavis@mills.edu" || "bcantwell@mills.edu " || "kxu@mills.edu" || "ramia.davis@gmail.com"
     end
     
 
