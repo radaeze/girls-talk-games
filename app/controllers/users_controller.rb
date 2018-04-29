@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if verify_recaptcha(model: @user) && @user.save
       session[:user_id] = @user.id
       flash[:success] = "Welcome to Girls Talk Games!"
       redirect_to @user
@@ -27,12 +27,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = @current_user
   end
   
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    @user = @current_user
+    if verify_recaptcha(model: @user) && @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
     else

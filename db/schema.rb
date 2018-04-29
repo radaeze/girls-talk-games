@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180426223826) do
+=======
+ActiveRecord::Schema.define(version: 20180428184054) do
+>>>>>>> 82092a45c94ef897dbdabfab003612d0ca9376e5
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -294,6 +298,7 @@ ActiveRecord::Schema.define(version: 20180426223826) do
     t.string "bio", default: "No bio"
     t.string "provider"
     t.string "picture"
+    t.boolean "admin"
     t.index ["username"], name: "username_nocase", unique: true
   end
 

@@ -4,26 +4,26 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+ruby '2.4.1'
+gem 'rails', '~> 5.1.5'
 gem 'bootstrap', '~> 4.0.0'
 #gem 'bootstrap-sass', '~> 3.3.7'
 gem 'will_paginate',           '~> 3.1.6'
+gem 'annotate', '~> 2.4.1.beta'
 
-ruby '2.4.1'
 gem 'faker', '~> 1.8.7'
 gem 'omniauth-google-oauth2', '~> 0.2.1'
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+
+
 
 gem 'thredded', '~> 0.14.2'
 
 gem "figaro"
-
+gem "recaptcha", require: "recaptcha/rails"
 
 gem 'giantbomb-api', '~> 1.6.0'
-
-
-
 
 gem 'acts_as_votable', '~> 0.11.1'
 
@@ -52,7 +52,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+#gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -90,6 +90,7 @@ group :production do
   gem 'fog-aws'
 end
 
+<<<<<<< HEAD
 gem 'annotate', '~> 2.4.1.beta'
 
 
@@ -98,6 +99,8 @@ gem 'annotate', '~> 2.4.1.beta'
 # add to end of Gemfile
 gem 'themoviedb'
  
+=======
+>>>>>>> 82092a45c94ef897dbdabfab003612d0ca9376e5
 group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~>3.6.0'

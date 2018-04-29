@@ -15,18 +15,16 @@
 #  bio             :string          default("No bio")
 #  provider        :string
 #  picture         :string
+#  admin           :boolean
 #
 
 class User < ApplicationRecord
     acts_as_voter
     has_many :likes
-    has_many :reviews
-    has_many :games, :through => :reviews
     has_many :posts, dependent: :destroy
     
     mount_uploader :picture, PictureUploader
     validate  :picture_size
-    
     def self.from_omniauth(auth)
       require 'faker'
       where(email: auth.info.email).first_or_initialize.tap do |user|
@@ -64,12 +62,12 @@ class User < ApplicationRecord
       SecureRandom.urlsafe_base64
     end
 
-    def admin
-        has_role?(:admin)
-    end
+    # def admin
+    #     has_role?(:admin)
+    # end
 
     def admin
-        self.id == 1
+        self.email == "ramdavis@mills.edu" || "bcantwell@mills.edu " || "kxu@mills.edu" || "ramia.davis@gmail.com"
     end
     
 
