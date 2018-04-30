@@ -30,15 +30,26 @@
     color: white;
 }
 
-a.navi:link, a.navi:active, a.navi:visited, a.navi:hover {
-    color: pink;
-    text-decoration:none !important;
+.container a {
+    text-decoration: none !important;
+    color: white;
 }
 
 li {
-    margin-right: .5em;
-    text-decoration:none !important;
+    font-size: .5em;
+    margin-right: .25em;
+    margin-left: .25em;
+    text-decoration: none !important;
+}
+
+.container2 a {
+    text-align: center;
+    text-decoration: none !important;
     color: silver;
+}
+
+.about-container p {
+  
 }
 
 

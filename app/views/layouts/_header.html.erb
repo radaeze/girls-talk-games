@@ -1,20 +1,17 @@
 <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navi navbar-brand" href="#"><%= link_to "Girls Talk Games", main_app.root_path %></ab>
+        <button type="button" class="btn btn-outline-secondary btn-block"> <a class="navi navbar-brand" href="#"><%= link_to "Girls Talk Games", main_app.root_path %></a></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "Home", main_app.root_path %> </button>
-            <li class="nav-item active">
-              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "Search", main_app.new_search_path %></button>
-            </li>
-            
-            <li class="nav-item active">
               <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "About", main_app.about_path %></button>
+            </li>
+            <li>
+              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "Search", main_app.new_search_path %></button>
             </li>
 
             <% if logged_in? %>
