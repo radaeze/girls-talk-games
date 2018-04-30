@@ -90,17 +90,7 @@ group :production do
   gem 'fog-aws'
 end
 
-<<<<<<< HEAD
-gem 'annotate', '~> 2.4.1.beta'
 
-
-# rspec and rails 5
- 
-# add to end of Gemfile
-gem 'themoviedb'
- 
-=======
->>>>>>> 82092a45c94ef897dbdabfab003612d0ca9376e5
 group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~>3.6.0'
