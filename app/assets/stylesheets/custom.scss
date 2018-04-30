@@ -3,7 +3,6 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
  */
-@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "thredded";
 
@@ -50,7 +49,7 @@ textarea {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid #gray-lighter;
   }
 }
 
@@ -76,7 +75,7 @@ textarea {
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: #gray-light;
     display: block;
     margin-left: 60px;
   }

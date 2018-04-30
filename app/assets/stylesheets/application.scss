@@ -16,7 +16,7 @@
   height:300px;
   background-repeat: no-repeat;
   background-size: cover;
-  border-bottom:1px solid #ff6a00
+  border-bottom:1px solid #ff6a00;
 }
   
 
@@ -30,8 +30,15 @@
     color: white;
 }
 
+a.navi:link, a.navi:active, a.navi:visited, a.navi:hover {
+    color: pink;
+    text-decoration:none !important;
+}
+
 li {
     margin-right: .5em;
+    text-decoration:none !important;
+    color: silver;
 }
 
 
