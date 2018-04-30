@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416210703) do
+ActiveRecord::Schema.define(version: 20180428184054) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20180416210703) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
+    t.string "picture"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -282,7 +282,7 @@ ActiveRecord::Schema.define(version: 20180416210703) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "uid", limit: 8
+    t.integer "uid"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -293,7 +293,11 @@ ActiveRecord::Schema.define(version: 20180416210703) do
     t.string "username"
     t.string "bio", default: "No bio"
     t.string "picture"
+<<<<<<< HEAD
     t.string "provider"
+=======
+    t.boolean "admin"
+>>>>>>> a2a6bfc48295a35aba400c73a5504febb8d559fb
     t.index ["username"], name: "username_nocase", unique: true
   end
 

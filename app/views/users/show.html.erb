@@ -32,7 +32,7 @@
             <% @user.votes.up.votables.each do |game| %>
               <li>
                 <%= link_to game.name, game  %>
-              <li>
+              </li>
             <% end %>
         </h4>
       </div>
@@ -43,7 +43,7 @@
             <% @user.votes.down.votables.each do |game| %>
               <li>
                 <%= link_to game.name, game  %>
-              <li>
+              </li>
             <% end %>
         </h4>
       </div>

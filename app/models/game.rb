@@ -10,7 +10,6 @@
 
 class Game < ApplicationRecord
      acts_as_votable
-     has_many :reviews
      validates :name,  presence: true,
         uniqueness: { case_sensitive: false }
         
