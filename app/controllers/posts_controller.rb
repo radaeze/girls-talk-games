@@ -19,7 +19,12 @@ before_action :logged_in_user, only: [:create, :destroy]
   private
 
     def post_params
-      params.require(:post).permit(:content)
+      params.require(:post).permit(:content, :picture)
+    end
+    
+    def correct_user
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to root_url if @post.nil?
     end
   
 end
