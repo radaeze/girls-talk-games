@@ -24,26 +24,17 @@
                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "Games", main_app.games_path %></button>
               </li>
               
-              <li class="dropdown">
-              <button type="button" class="btn btn-outline-primary"> </button><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b></button>
-              </a>
-            <ul class="dropdown-menu">
-            
-              <li class="nav-item">
-              <li><%= link_to "Profile", current_user %></li>
-              </li>
-              <li class="nav-item">
-              <li><%= link_to "Forum", '/forum' %></li>
-              </li>
-              <li class="nav-item">
-              <li><%= link_to "Settings", main_app.edit_user_path(current_user) %></li>
-              </li>
-              <li class="nav-item">
-              <li><%= link_to "Logout", main_app.logout_path, method: :delete %></li>
-              </li>
-            </ul>
-          </li>
+              <div class="dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" a href="#" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Account </button>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2>
+                  <button class="btn btn-outline-secondary dropdown-item" type="button"><%= link_to "Profile", current_user %></button>
+                  <button class="dropdown-item" type="button"><%= link_to "Forum", '/forum' %></button>
+                  <button class="dropdown-item" type="button"><%= link_to "Settings", main_app.edit_user_path(current_user) %></button>
+                  <button class="dropdown-item" type="button"><%= link_to "Logout", main_app.logout_path, method: :delete %></button>
+              </div>
+          </div>
         <% else %>
           <li class="nav-item">
            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "Login", main_app.login_path %></button>
