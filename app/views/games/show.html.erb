@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-     <%= stylesheet_link_tag 'users' %>
-     <%= javascript_include_tag 'users' %>
     <header class = "game">
-        <div class = "container">
+        <div class = "container10">
             <h1><%= image_tag @game.image %></h1>
             <h2><%= @game.name %></h2>
             <h3><%= @game.description %></h3>
-            <h4><%= link_to "upvote", like_game_path(@game), method: :put %> </h4>
-            <h4><%= link_to "downvote", dislike_game_path(@game), method: :put %></h4>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "upvote", like_game_path(@game), method: :put %> </button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "downvote", dislike_game_path(@game), method: :put %></button>
             <h4><%= @game.score %> </h4>
         </div>
   

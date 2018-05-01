@@ -28,8 +28,8 @@
                 <button class="btn btn-outline-primary dropdown-toggle" a href="#" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Account </button>
               
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2>
-                  <button class="btn btn-outline-secondary dropdown-item" type="button"><%= link_to "Profile", current_user %></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <button class="btn btn-outline-primary dropdown-item" type="button"><%= link_to "Profile", current_user %></button>
                   <button class="dropdown-item" type="button"><%= link_to "Forum", '/forum' %></button>
                   <button class="dropdown-item" type="button"><%= link_to "Settings", main_app.edit_user_path(current_user) %></button>
                   <button class="dropdown-item" type="button"><%= link_to "Logout", main_app.logout_path, method: :delete %></button>
