@@ -14,17 +14,15 @@
             <h3 class="font-weight-light mb-0">
             <%= @user.bio %>
          </div>
-         <div class="container">
-            <% if @user.posts.any? %>
-            <hr class="star-light">
-            <h3 class="boom">Posts (<%= @user.posts.count %>)</h3>
-            <h3 class="font-weight-light mb-0">
-              <ol class="posts">
-               <%= render @posts %>
-              </ol>
+          <div class="col-md-8">
+          <% if @user.posts.any? %>
+           <h3>Posts (<%= @user.posts.count %>)</h3>
+            <ol class="posts">
+             <%= render @posts %>
+             </ol>
             <%= will_paginate @posts %>
-            <% end %>
-         </div>
+           <% end %>
+          </div>
          <div>
             <h4>
                <%= " #{@user.username} likes: " %>
