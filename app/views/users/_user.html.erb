@@ -1,7 +1,10 @@
 <li>
-
+  <h3>
   <%= image_tag( user.picture) %>
+  </h3>
+  <h3>
   <%= link_to user.username, user %>
+  </h3>
     <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>

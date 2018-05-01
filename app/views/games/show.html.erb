@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-     <%= stylesheet_link_tag 'users' %>
-     <%= javascript_include_tag 'users' %>
+  
     <header class = "game">
         <div class = "container">
             <h1><%= image_tag @game.image %></h1>
             <h2><%= @game.name %></h2>
             <h3><%= @game.description %></h3>
-            <h4><%= link_to "upvote", like_game_path(@game), method: :put %> </h4>
-            <h4><%= link_to "downvote", dislike_game_path(@game), method: :put %></h4>
-            <h4><%= @game.score %> </h4>
+            <h2><%= link_to "upvote", like_game_path(@game), method: :put %> </h2>
+            <h2><%= link_to "downvote", dislike_game_path(@game), method: :put %></h2>
+            <h2><%= @game.score %> </h2>
         </div>
   
     </head>

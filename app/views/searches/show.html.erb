@@ -7,7 +7,9 @@
 <ul class="searches">
   <% @search.games.each do |game| %>
     <li>
+      <h3>
       <%= link_to game.name, game %>
+      </h3>
     </li>
   <% end %>
 </ul>
