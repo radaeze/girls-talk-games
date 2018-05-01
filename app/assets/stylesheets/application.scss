@@ -32,7 +32,7 @@
 
 .container a {
     text-decoration: none !important;
-    color: white;
+    color: silver;
 }
 
 li {
@@ -42,15 +42,42 @@ li {
     text-decoration: none !important;
 }
 
+.team {
+    text-decoration: underline;
+}
+.container2 {
+    font-size: .25em;
+    text-align: right;
+}
+.container10 a {
+  text-decoration: none !important;
+  color: darkblue;
+  font: bold, 30px;
+}
+
+.container11{
+      text-decoration: none !important;
+}
+.container11 a {
+  text-decoration: none !important;
+}
+
 .container2 a {
-    text-align: justify;
     text-decoration: none;
     color: silver;
 }
 
-.about {
+.about-container {
     text-align: center;
-  
+}
+
+.dropdown-item {
+  background-color: black;
+}
+
+img {
+    width: 300px;
+    height: auto;
 }
 
 @media (min-width: 992px) {
