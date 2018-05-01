@@ -8,10 +8,7 @@
             <h3><%= @game.description %></h3>
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "upvote", like_game_path(@game), method: :put %> </button>
             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><%= link_to "downvote", dislike_game_path(@game), method: :put %></button>
-            <h4><%= @game.score %> </h4>
-            <h2><%= link_to "upvote", like_game_path(@game), method: :put %> </h2>
-            <h2><%= link_to "downvote", dislike_game_path(@game), method: :put %></h2>
-            <h2><%= @game.score %> </h2>
+            <button>A crowd of <%= @game.score %> approves of this! </button>
         </div>
   
     </head>
