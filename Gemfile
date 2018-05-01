@@ -86,7 +86,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+#  gem 'pg'
   gem 'fog-aws'
 end
 
@@ -107,3 +107,5 @@ group :test do
   gem 'shoulda-matchers', '~>3.1'
   gem 'rails-controller-testing'
 end
+
+gem "simple_calendar", "~> 2.0"
