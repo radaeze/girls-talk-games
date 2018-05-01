@@ -10,9 +10,9 @@
             <h1 class="mb-0"><%= @user.username %></h1> 
       </header>
             <hr class="star-light">
-            <h2 class="boom">Bio</h2>
-            <h3 class="font-weight-light mb-0">
-            <%= @user.bio %>
+            <h2 class="boom text-center">Bio</h2>
++            <h3 class="font-weight-light mb-0 text-center">
++            <%= @user.bio %></h3>
          </div>
          <div class="container">
             <% if @user.posts.any? %>
@@ -30,7 +30,7 @@
                <%= " #{@user.username} likes: " %>
                <% @user.votes.up.votables.each do |game| %>
                <li>
-                  <%= link_to game.name, game  %>
+                  <button class="btn btn-outline-primary"><%= link_to game.name, game  %></button>
                </li>
                <% end %>
             </h4>
@@ -40,7 +40,7 @@
                <%= " #{@user.username} dislikes: " %>
                <% @user.votes.down.votables.each do |game| %>
                <li>
-                  <%= link_to game.name, game  %>
+                  <button class="btn btn-outline-primary"><%= link_to game.name, game  %></button>
                </li>
                <% end %>
             </h4>
