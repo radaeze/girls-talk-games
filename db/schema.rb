@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20180428184054) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
-    t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -283,18 +282,18 @@ ActiveRecord::Schema.define(version: 20180428184054) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "uid", limit: 8
+    t.integer "uid"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "password"
+    t.string "password", limit: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "username"
     t.string "bio", default: "No bio"
-    t.string "picture"
     t.string "provider"
+    t.string "picture"
     t.boolean "admin"
     t.index ["username"], name: "username_nocase", unique: true
   end

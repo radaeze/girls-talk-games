@@ -1,34 +1,31 @@
-<<<<<<< HEAD
-
-<% provide(:title, @user.first_name) %>
-<header class="masthead bg-primary text-white">
-
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.picture  %>
-        <%= @user.username %>
-      </h1>
-    </section>
-  </aside>
-</div>
-</header>
-<div class="container">
-              
+<!DOCTYPE html>
+<html>
+  <head>
+ 
+      <header class="masthead bg-primary text-white text-center">
+        <div class="container">
+          
+          <% provide(:title, @user.first_name) %>
+          <h1>
+           <%= image_tag( @user.picture) %>
+          
+         </h1>
+          <h1 class="text-uppercase mb-0"><%= @user.username %></h1>
+          <hr class="star-light">
           <h2 class="boom">Bio</h2>
           <h3 class="font-weight-light mb-0"><%= @user.bio %></h2>
+        
 
-
- <% if @user.posts.any? %>
-        <h3>Posts (<%= @user.posts.count %>)</h3>
+        <% if @user.posts.any? %>
+        <h3 class="boom">Posts (<%= @user.posts.count %>)</h3>
         <ol class="posts">
            <%= render @posts %>
         </ol>
         <%= will_paginate @posts %>
-<% end %>
-</div>
-      <div class="container">
+        <% end %>
+     </div>
+     
+      <div>
        <h4>
             <%= " #{@user.username} likes: " %>
             <% @user.votes.up.votables.each do |game| %>
@@ -39,7 +36,7 @@
         </h4>
       </div>
       
-      <div class="container">
+      <div>
        <h4>
             <%= " #{@user.username} dislikes: " %>
             <% @user.votes.down.votables.each do |game| %>
@@ -49,3 +46,7 @@
             <% end %>
         </h4>
       </div>
+
+      </header>
+  </head>
+</html>
