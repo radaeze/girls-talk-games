@@ -43,16 +43,15 @@ li {
 }
 
 .container2 a {
-    text-align: center;
-    text-decoration: none !important;
+    text-align: justify;
+    text-decoration: none;
     color: silver;
 }
 
-.about-container p {
+.about {
+    text-align: center;
   
 }
-
-
 
 @media (min-width: 992px) {
   body {
