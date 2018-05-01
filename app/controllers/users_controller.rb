@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end  
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.paginate(page: params[:page])
+    @posts = @user.posts.paginate(page: params[:page], :per_page => 3)
   end
 
   def new
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if verify_recaptcha(model: @user) && @user.save
       session[:user_id] = @user.id
       flash[:success] = "Welcome to Girls Talk Games!"
       redirect_to @user
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   
   def update
     @user = @current_user
-    if @user.update_attributes(user_params)
+    if verify_recaptcha(model: @user) && @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
     else

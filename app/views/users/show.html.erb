@@ -2,7 +2,7 @@
 <html>
    <head>
       <header class="masthead bg-primary text-white text-center">
-         <div class="container11">
+         <div class="container">
             <% provide(:title, @user.first_name) %>
             <h1>
                <%= image_tag( @user.picture) %>
@@ -10,9 +10,9 @@
             <h1 class="mb-0"><%= @user.username %></h1> 
       </header>
             <hr class="star-light">
-            <h2 class="boom text-center">Bio</h2>
-            <h3 class="font-weight-light mb-0 text-center">
-            <%= @user.bio %></h3>
+            <h2 class="boom">Bio</h2>
+            <h3 class="font-weight-light mb-0">
+            <%= @user.bio %>
          </div>
          <div class="container">
             <% if @user.posts.any? %>
@@ -25,12 +25,12 @@
             <%= will_paginate @posts %>
             <% end %>
          </div>
-         
+         <div>
             <h4>
                <%= " #{@user.username} likes: " %>
                <% @user.votes.up.votables.each do |game| %>
                <li>
-               <button class="btn btn-outline-primary"><%= link_to game.name, game  %></button>
+                  <%= link_to game.name, game  %>
                </li>
                <% end %>
             </h4>
@@ -40,11 +40,11 @@
                <%= " #{@user.username} dislikes: " %>
                <% @user.votes.down.votables.each do |game| %>
                <li>
-                <button class="btn btn-outline-primary"><%= link_to game.name, game  %></button>
+                  <%= link_to game.name, game  %>
                </li>
                <% end %>
             </h4>
          </div>
-      <div>
+      
    </head>
 </html>
