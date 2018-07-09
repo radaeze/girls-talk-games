@@ -1,24 +1,18 @@
-# README
+# README 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Girls Talk Games**, is a prototype SaaS social network application developed for Mills' CS 170 Software Engineering course. 
+Ideally this social networking site would provide a space for women and femmes to discuss video games without discrimination or harassment. 
 
-Things you may want to cover:
+## Features 
+Third-party and first party authentication 
+Profile pages
+Game pages 
+Recommendation system
+Forums 
+Search
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
